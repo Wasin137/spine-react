@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Header";
+import Input from "./Input";
+import Result from "./Result";
+import Details from "./Details";
+import { useState } from "react";
 
 function App() {
+  const [data, setData] = useState('')
+
+  const onCalNewData = (newData) =>{
+    setData(newData)
+  }
+
+  const clearData = () =>{
+    setData('')
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Details />
+      {data !== '' &&<Result  data={data} onClose={clearData}/>}
+      <Input onCalData={onCalNewData}/>
     </div>
   );
 }
