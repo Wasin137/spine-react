@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { Button, Typography } from '@mui/material';
+import { Button } from '@mui/material';
 
 const Input = (props)=> {
     const asaOptions = [
@@ -16,13 +16,13 @@ const Input = (props)=> {
         { id: 0, label: '0'},
         { id: 1, label: '1'},
         { id: 2, label: '2'},
-        { id: 3, label: '>3'}
+        { id: 3, label: '≥3'}
     ]
 
     const TLIFoptions = [
         { id: 0, label: '0'},
         { id: 1, label: '1'},
-        { id: 2, label: '>1'}
+        { id: 2, label: '≥2'}
     ]
 
     const sacraloptions =[

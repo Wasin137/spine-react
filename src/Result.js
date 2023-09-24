@@ -98,6 +98,21 @@ const Result = (props)=>{
               <p className='fst-italic'>Calculated Score = <span className='text-primarty fw-bold'>{sum_score}</span></p>
           </div>
           )}
+          <div className='row'>
+            <p className='fs-6 fst-italic text-center text-decoration-underline'>Patient's Detail (HN: <span className='fw-bold'>{hn}</span>)</p>
+            <div className='row'>
+              <div className='col-12 col-sm-6'>
+                <p>BMI: <span className='fw-bold'>{(weight/((height/100)**2)).toFixed(2)}</span> kg/m²</p>
+                <p>Pre-Op Hct: <span className='fw-bold'>{hct}</span>%</p>
+                <p>ASA Classification: <span className='fw-bold'>{asa}</span></p>
+              </div>
+              <div className='col-12 col-sm-6'>
+                <p>Level of Laminectomy: <span className='fw-bold'>{lamineclevel >= 3 ? "more than 3": lamineclevel}</span></p>
+                <p>TLIF Level: <span className='fw-bold'>{tlif >= 2 ? "more than 2": tlif}</span></p>
+                <p>Sacral inclusion: <span className='fw-bold'>{sacral}</span></p>
+              </div>
+            </div>
+          </div>
           <p className='text-center text-danger'>*if user need more than suggestion advice type-screening PRC</p>
         </DialogContent>
         <DialogActions>
